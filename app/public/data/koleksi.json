@@ -1,10 +1,98 @@
 [
   {
     "id": "1",
-    "judul": "Contoh item pertama",
-    "kategori": "Contoh",
-    "fieldTema1": "ganti sesuai field tema",
-    "fieldTema2": 0,
-    "fieldTema3": "ganti sesuai field tema"
+    "judul": "Pantai Sari Ringgung",
+    "kategori": "Pantai",
+    "kabupaten": "Pesawaran",
+    "hargaTiket": 25000,
+    "jamBuka": "07.00-17.00"
+  },
+  {
+    "id": "2",
+    "judul": "Pantai Mutun",
+    "kategori": "Pantai",
+    "kabupaten": "Pesawaran",
+    "hargaTiket": 25000,
+    "jamBuka": "00.00-24.00"
+  },
+  {
+    "id": "3",
+    "judul": "Teluk Kiluan",
+    "kategori": "Pantai",
+    "kabupaten": "Tanggamus",
+    "hargaTiket": 5000,
+    "jamBuka": "07.00-17.00"
+  },
+  {
+    "id": "4",
+    "judul": "Taman Nasional Way Kambas",
+    "kategori": "Alam",
+    "kabupaten": "Lampung Timur",
+    "hargaTiket": 20000,
+    "jamBuka": "08.00-18.00"
+  },
+  {
+    "id": "5",
+    "judul": "Air Terjun Way Lalaan",
+    "kategori": "Alam",
+    "kabupaten": "Tanggamus",
+    "hargaTiket": 10000,
+    "jamBuka": "09.00-17.00"
+  },
+  {
+    "id": "6",
+    "judul": "Puncak Mas",
+    "kategori": "Alam",
+    "kabupaten": "Bandar Lampung",
+    "hargaTiket": 20000,
+    "jamBuka": "08.00-22.00"
+  },
+  {
+    "id": "7",
+    "judul": "Museum Lampung",
+    "kategori": "Budaya",
+    "kabupaten": "Bandar Lampung",
+    "hargaTiket": 5000,
+    "jamBuka": "08.00-14.00"
+  },
+  {
+    "id": "8",
+    "judul": "Taman Purbakala Pugung Raharjo",
+    "kategori": "Budaya",
+    "kabupaten": "Lampung Timur",
+    "hargaTiket": 0,
+    "jamBuka": "08.00-16.00"
+  },
+  {
+    "id": "9",
+    "judul": "Menara Siger",
+    "kategori": "Budaya",
+    "kabupaten": "Lampung Selatan",
+    "hargaTiket": 20000,
+    "jamBuka": "08.00-18.00"
+  },
+  {
+    "id": "10",
+    "judul": "Sambal Seruit Buk Lin",
+    "kategori": "Kuliner",
+    "kabupaten": "Bandar Lampung",
+    "hargaTiket": 0,
+    "jamBuka": "11.00-18.00"
+  },
+  {
+    "id": "11",
+    "judul": "Pindang Riu",
+    "kategori": "Kuliner",
+    "kabupaten": "Bandar Lampung",
+    "hargaTiket": 0,
+    "jamBuka": "10.00-21.00"
+  },
+  {
+    "id": "12",
+    "judul": "Pindang Uwo",
+    "kategori": "Kuliner",
+    "kabupaten": "Bandar Lampung",
+    "hargaTiket": 0,
+    "jamBuka": "10.00-20.00"
   }
 ]
