@@ -1,0 +1,16 @@
+.kotak-pencarian {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.kotak-pencarian input {
+  max-width: 360px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: normal;
+}
