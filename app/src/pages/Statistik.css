@@ -1,0 +1,42 @@
+.bungkus-tabel {
+  overflow-x: auto;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.tabel-statistik {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+}
+
+.tabel-statistik th,
+.tabel-statistik td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.tabel-statistik thead th {
+  background: #0f5c63;
+  color: #ffffff;
+}
+
+.tabel-statistik tbody tr:nth-child(even) {
+  background: #f3f8f8;
+}
+
+.tabel-statistik tfoot th,
+.tabel-statistik tfoot td {
+  border-bottom: none;
+  border-top: 2px solid #0f5c63;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .tabel-statistik th,
+  .tabel-statistik td {
+    padding: 0.5rem 0.65rem;
+  }
+}
