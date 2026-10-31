@@ -1,0 +1,27 @@
+.alat-koleksi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alat-koleksi .kotak-pencarian {
+  margin-bottom: 0;
+}
+
+.pilih-kategori {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.pilih-kategori select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: normal;
+  background: #ffffff;
+}
