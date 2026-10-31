@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import './Layout.css'
 
 const MENU = [
   { ke: '/', label: 'Beranda' },
@@ -10,21 +11,21 @@ const MENU = [
 
 export default function Layout() {
   return (
-    <>
-      <header>
-        <strong>Wisata Lampung</strong>
-        <nav>
+    <div className="kerangka">
+      <header className="kepala">
+        <strong className="merek">Destinasi Wisata Lampung</strong>
+        <nav className="menu">
           {MENU.map(({ ke, label }) => (
-            // end pada "/" agar menu Beranda tidak ikut aktif di semua halaman.
             <NavLink key={ke} to={ke} end={ke === '/'}>
               {label}
             </NavLink>
           ))}
         </nav>
       </header>
-      <main>
+      <main className="isi">
         <Outlet />
       </main>
-    </>
+      <footer className="kaki">Ujian Tengah Semester Pengembangan Aplikasi Web</footer>
+    </div>
   )
 }
