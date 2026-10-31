@@ -1,0 +1,29 @@
+.profil {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.5rem;
+  max-width: 480px;
+  padding: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.profil dt {
+  font-weight: 600;
+}
+
+.profil dd {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .profil {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .profil dd {
+    margin-bottom: 0.5rem;
+  }
+}
