@@ -1,0 +1,53 @@
+.formulir {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 480px;
+}
+
+.formulir label {
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
+
+.formulir input,
+.formulir select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  font: inherit;
+  background: #ffffff;
+}
+
+.formulir input[aria-invalid='true'] {
+  border-color: #c62828;
+}
+
+.galat {
+  margin: 0;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+.formulir button {
+  align-self: flex-start;
+  margin-top: 1rem;
+  padding: 0.55rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  background: #0f5c63;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.formulir button:hover {
+  background: #0b464c;
+}
+
+@media (max-width: 768px) {
+  .formulir {
+    max-width: none;
+  }
+}
