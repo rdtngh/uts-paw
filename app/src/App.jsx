@@ -9,12 +9,10 @@ import Statistik from './pages/Statistik.jsx'
 import Tentang from './pages/Tentang.jsx'
 import TidakDitemukan from './pages/TidakDitemukan.jsx'
 
-// BrowserRouter ada di main.jsx, bukan di sini, agar uji otomatis bisa memakai MemoryRouter.
 export default function App() {
   return (
     <KoleksiProvider>
       <Routes>
-        {/* Rute induk tanpa path: semua halaman di dalamnya memakai Layout yang sama. */}
         <Route element={<Layout />}>
           <Route path="/" element={<Beranda />} />
           <Route path="/koleksi" element={<Koleksi />} />
