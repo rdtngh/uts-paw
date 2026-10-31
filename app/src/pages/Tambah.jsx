@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import useKoleksi from '../hooks/useKoleksi.js'
 import './Tambah.css'
 
 const KATEGORI = ['Pantai', 'Alam', 'Budaya', 'Kuliner']
@@ -30,6 +32,8 @@ const AWAL = {
 }
 
 export default function Tambah() {
+  const { tambah } = useKoleksi()
+  const navigate = useNavigate()
   const [form, setForm] = useState(AWAL)
   const [galat, setGalat] = useState('')
 
@@ -41,7 +45,13 @@ export default function Tambah() {
       setGalat('Judul wajib diisi, minimal 3 karakter.')
       return
     }
-    setGalat('')
+    tambah({
+      ...form,
+      judul: form.judul.trim(),
+      jamBuka: form.jamBuka.trim(),
+      hargaTiket: Number(form.hargaTiket) || 0,
+    })
+    navigate('/koleksi')
   }
 
   return (
