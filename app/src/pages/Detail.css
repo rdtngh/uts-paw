@@ -17,6 +17,27 @@
   margin: 0;
 }
 
+.aksi {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tombol-hapus {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #c62828;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tombol-hapus:hover {
+  background: #a31f1f;
+}
+
 @media (max-width: 480px) {
   .rincian {
     grid-template-columns: 1fr;

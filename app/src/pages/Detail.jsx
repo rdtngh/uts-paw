@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import useKoleksi from '../hooks/useKoleksi.js'
 import './Detail.css'
 
@@ -6,7 +6,8 @@ const formatHarga = (harga) => (Number(harga) === 0 ? 'Gratis' : `Rp${Number(har
 
 export default function Detail() {
   const { id } = useParams()
-  const { items, loading, error } = useKoleksi()
+  const navigate = useNavigate()
+  const { items, loading, error, hapus } = useKoleksi()
 
   if (loading) return <p>Memuat data destinasi...</p>
   if (error) return <p role="alert">Gagal memuat data: {error}</p>
@@ -23,6 +24,13 @@ export default function Detail() {
     )
   }
 
+  const konfirmasiHapus = () => {
+    if (window.confirm(`Hapus "${item.judul}" dari koleksi?`)) {
+      hapus(item.id)
+      navigate('/koleksi')
+    }
+  }
+
   return (
     <section>
       <h1>{item.judul}</h1>
@@ -36,7 +44,12 @@ export default function Detail() {
         <dt>Jam Buka</dt>
         <dd>{item.jamBuka}</dd>
       </dl>
-      <Link to="/koleksi">Kembali ke koleksi</Link>
+      <div className="aksi">
+        <button type="button" className="tombol-hapus" onClick={konfirmasiHapus}>
+          Hapus
+        </button>
+        <Link to="/koleksi">Kembali ke koleksi</Link>
+      </div>
     </section>
   )
 }
