@@ -1,0 +1,46 @@
+.daftar-kartu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.kartu {
+  padding: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.kartu h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.kartu a {
+  color: #0f5c63;
+  text-decoration: none;
+}
+
+.kartu a:hover {
+  text-decoration: underline;
+}
+
+.kartu p {
+  margin: 0;
+  color: #57606a;
+  font-size: 0.9rem;
+}
+
+.lencana {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #e3f2f3;
+  color: #0f5c63;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .daftar-kartu {
+    grid-template-columns: 1fr;
+  }
+}

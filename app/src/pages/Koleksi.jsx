@@ -1,3 +1,4 @@
+import KartuDestinasi from '../components/KartuDestinasi.jsx'
 import useKoleksi from '../hooks/useKoleksi.js'
 
 export default function Koleksi() {
@@ -9,11 +10,11 @@ export default function Koleksi() {
   return (
     <>
       <h1>Koleksi Destinasi</h1>
-      <ul>
+      <div className="daftar-kartu">
         {items.map((item) => (
-          <li key={item.id}>{item.judul}</li>
+          <KartuDestinasi key={item.id} item={item} />
         ))}
-      </ul>
+      </div>
     </>
   )
 }
