@@ -70,7 +70,7 @@ Aplikasi web untuk menjelajahi, mencari, dan mengelola daftar destinasi wisata d
 | Tema | Destinasi Wisata Lampung |
 | Deployment | https://rdtngh.github.io/uts-paw/ |
 
-![Tangkapan layar beranda](docs/beranda.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e558d92-14d3-4962-afdc-15712f9af4bc" />
 
 ### Fitur
 
