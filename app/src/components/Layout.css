@@ -41,6 +41,40 @@
   font-weight: 600;
 }
 
+.menu a:focus-visible {
+  outline: 2px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+.merek::before {
+  content: '';
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: #ffd54f;
+}
+
+#kepala-situs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#navigasi-utama {
+  font-size: 0.95rem;
+}
+
+#konten-utama {
+  min-height: 60vh;
+}
+
+#kaki-situs {
+  background: #ffffff;
+}
+
 .isi {
   flex: 1;
   width: 100%;
