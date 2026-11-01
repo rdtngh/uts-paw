@@ -58,32 +58,57 @@ Panduan lengkap beserta solusi kendala umum ada di halaman [Panduan](https://uts
 
 Penilaian akhir selalu memakai `grader/` dan `shared/` versi repo induk, jadi mengubahnya di fork tidak berpengaruh.
 
-## README milikmu
+## Destinasi Wisata Lampung
 
-Ganti seluruh isi berkas ini dengan dokumentasi aplikasimu (butir rubrik A4). Kerangka berikut boleh dipakai:
+Aplikasi web untuk menjelajahi, mencari, dan mengelola daftar destinasi wisata di Provinsi Lampung, mulai dari pantai, wisata alam, situs budaya, hingga tempat kuliner khas.
 
-```markdown
-# Nama Aplikasi
-
-Nama: ...
-NIM: ...
-Kelas: ...
-Tema: ...
-Deployment: https://USERNAME.github.io/uts-paw/
+| | |
+|---|---|
+| Nama | Raditya Alrasyid Nugroho |
+| NIM | 123140125 |
+| Kelas | RB |
+| Tema | Destinasi Wisata Lampung |
+| Deployment | https://rdtngh.github.io/uts-paw/ |
 
 ![Tangkapan layar beranda](docs/beranda.png)
 
-## Fitur
+### Fitur
 
-- ...
+- **Beranda**: ringkasan jumlah destinasi dan jumlah kategori yang dihitung dari data.
+- **Koleksi**: daftar destinasi dalam bentuk kartu, dengan pencarian judul (tanpa membedakan huruf besar-kecil) dan filter kategori yang bisa dipakai bersamaan.
+- **Detail destinasi**: menampilkan kategori, kabupaten/kota, harga tiket, dan jam buka, serta pesan khusus bila id tidak ditemukan.
+- **Hapus destinasi**: tombol Hapus dengan konfirmasi, lalu kembali ke halaman koleksi.
+- **Tambah destinasi**: form dengan validasi judul dan pesan error yang terbaca pembaca layar.
+- **Penyimpanan lokal**: data yang ditambah atau dihapus tetap tersimpan setelah halaman di-refresh.
+- **Statistik**: tabel jumlah dan persentase destinasi per kategori beserta totalnya.
+- **Tentang**: identitas mahasiswa dan tautan ke repositori.
+- **Halaman 404** untuk alamat yang tidak dikenal.
+- **Tampilan responsif** untuk layar desktop dan ponsel.
 
-## Menjalankan secara lokal
+### Menjalankan secara lokal
 
+```bash
 cd app
 npm install
 npm run dev
-
-## Konsep React yang dipakai
-
-- ...
 ```
+
+Perintah lain:
+
+```bash
+npm test        # menjalankan test Vitest
+npm run lint    # memeriksa kode dengan oxlint
+npm run build   # membuat versi produksi
+npm run cek     # menjalankan pemeriksa rubrik
+```
+
+### Konsep React yang dipakai
+
+- **useState dan useEffect**: menyimpan state form, pencarian, filter, serta mengambil data saat aplikasi dimuat.
+- **Context API**: `KoleksiContext` dan `KoleksiProvider` membagikan data koleksi beserta fungsi `tambah` dan `hapus` ke semua halaman.
+- **Custom hook**: `useLocalStorage` untuk state yang tersimpan di localStorage, dan `useKoleksi` untuk membaca Context.
+- **Fetch dengan async/await**: data awal diambil dari `public/data/koleksi.json` dengan state `loading` dan `error`.
+- **React Router**: tujuh rute dengan rute induk `Layout`, `NavLink` dan `Link` untuk navigasi, `useParams` untuk membaca id, dan `useNavigate` untuk berpindah halaman setelah menyimpan atau menghapus.
+- **Komponen dan props**: `Layout`, `KartuDestinasi`, `KotakPencarian`, `PilihKategori`, dan `PesanStatus`.
+- **Form terkontrol**: satu objek state untuk semua input dengan validasi buatan sendiri.
+- **Testing**: Vitest dan Testing Library dengan `fetch` tiruan dan `MemoryRouter`.
