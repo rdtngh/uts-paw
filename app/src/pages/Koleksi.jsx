@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import KartuDestinasi from '../components/KartuDestinasi.jsx'
 import KotakPencarian from '../components/KotakPencarian.jsx'
+import PesanStatus from '../components/PesanStatus.jsx'
 import PilihKategori from '../components/PilihKategori.jsx'
 import useKoleksi from '../hooks/useKoleksi.js'
 import './Koleksi.css'
@@ -10,8 +11,7 @@ export default function Koleksi() {
   const [cari, setCari] = useState('')
   const [kategori, setKategori] = useState('Semua')
 
-  if (loading) return <p>Memuat data destinasi...</p>
-  if (error) return <p role="alert">Gagal memuat data: {error}</p>
+  if (loading || error) return <PesanStatus loading={loading} error={error} />
 
   const daftarKategori = [...new Set(items.map((item) => item.kategori))]
   const kataKunci = cari.trim().toLowerCase()

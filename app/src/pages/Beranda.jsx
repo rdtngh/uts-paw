@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import mahasiswa from '../../mahasiswa.json'
+import PesanStatus from '../components/PesanStatus.jsx'
 import useKoleksi from '../hooks/useKoleksi.js'
 
 export default function Beranda() {
@@ -12,10 +13,8 @@ export default function Beranda() {
       <p>
         {mahasiswa.nama} ({mahasiswa.nim})
       </p>
-      {loading ? (
-        <p>Memuat data destinasi...</p>
-      ) : error ? (
-        <p role="alert">{error}</p>
+      {loading || error ? (
+        <PesanStatus loading={loading} error={error} />
       ) : (
         <p>
           Terdapat {items.length} destinasi wisata dalam {jumlahKategori} kategori.

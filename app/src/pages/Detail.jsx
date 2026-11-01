@@ -1,4 +1,5 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import PesanStatus from '../components/PesanStatus.jsx'
 import useKoleksi from '../hooks/useKoleksi.js'
 import './Detail.css'
 
@@ -9,8 +10,7 @@ export default function Detail() {
   const navigate = useNavigate()
   const { items, loading, error, hapus } = useKoleksi()
 
-  if (loading) return <p>Memuat data destinasi...</p>
-  if (error) return <p role="alert">Gagal memuat data: {error}</p>
+  if (loading || error) return <PesanStatus loading={loading} error={error} />
 
   const item = items.find((i) => String(i.id) === String(id))
 
