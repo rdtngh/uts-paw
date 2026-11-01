@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 import App from './App.jsx'
+import mahasiswa from '../mahasiswa.json'
 
 const DATA = [
   {
@@ -24,6 +25,7 @@ const DATA = [
 ]
 
 beforeEach(() => {
+  localStorage.clear()
   vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify(DATA))))
 })
 
@@ -62,4 +64,38 @@ test('id yang tidak ada menampilkan pesan tidak ditemukan', async () => {
   buka('/koleksi/999')
   expect(await screen.findByText(/tidak ditemukan/i)).toBeInTheDocument()
   expect(screen.queryByText('404')).not.toBeInTheDocument()
+})
+
+test('pencarian menyaring kartu sesuai judul', async () => {
+  const user = userEvent.setup()
+  buka('/koleksi')
+  await screen.findByText('Museum Uji Coba')
+  await user.type(screen.getByRole('searchbox'), 'pantai')
+  expect(screen.getByText('Pantai Uji Coba')).toBeInTheDocument()
+  expect(screen.queryByText('Museum Uji Coba')).not.toBeInTheDocument()
+})
+
+test('halaman statistik menampilkan tabel jumlah per kategori', async () => {
+  buka('/statistik')
+  const tabel = await screen.findByRole('table')
+  expect(within(tabel).getByText('Pantai')).toBeInTheDocument()
+  expect(within(tabel).getByText('Budaya')).toBeInTheDocument()
+  expect(within(tabel).getByText('Total')).toBeInTheDocument()
+})
+
+test('halaman tentang menampilkan nama dan NIM', () => {
+  buka('/tentang')
+  expect(screen.getByText(mahasiswa.nim)).toBeInTheDocument()
+  expect(screen.getByText(mahasiswa.nama)).toBeInTheDocument()
+})
+
+test('menyimpan item baru membuatnya muncul di koleksi', async () => {
+  const user = userEvent.setup()
+  buka('/tambah')
+  await screen.findByRole('button', { name: 'Simpan' })
+  await user.type(screen.getByLabelText('Judul'), 'Air Terjun Uji Coba')
+  await user.click(screen.getByRole('button', { name: 'Simpan' }))
+  expect(await screen.findByText('Air Terjun Uji Coba')).toBeInTheDocument()
+  expect(screen.getByRole('searchbox')).toBeInTheDocument()
+  expect(localStorage.getItem('uts-paw-koleksi')).toContain('Air Terjun Uji Coba')
 })
